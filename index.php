@@ -1,4 +1,4 @@
 <?php
     echo "Hello PHP"
-    echo "Test"
+    echo "Test 2"
 ?>
