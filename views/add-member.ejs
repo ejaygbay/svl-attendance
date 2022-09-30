@@ -1,0 +1,484 @@
+<%- include('./layouts/head-links') -%>
+    </head>
+
+    <body class="app sidebar-mini rtl">
+        <!-- Navbar-->
+        <%- include('./layouts/navbar') -%>
+            <!-- Sidebar menu-->
+            <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+            <!-- Sidebar menu end -->
+            <%- include('./layouts/sidebar') -%>
+                <!-- Main page content -->
+                <main class="app-content">
+                    <div class="app-title">
+                        <div>
+                            <h1><i class="fa fa-solid fa-qrcode"></i> Members</h1>
+                            <p class="text-center">Get all info about Members</p>
+
+                        </div>
+                        <ul class="app-breadcrumb breadcrumb">
+                            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                            <li class="breadcrumb-item"><a href="#">New Member</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <div style="width: 50%; margin: auto;">
+
+                        <!-- full form  -->
+                        <!-- <h2 style="text-align: center;">Add New Member</h2> -->
+
+
+                        <!-- Members details  -->
+                        <form action="/members" method="POST" id="member-details" style="background-color: white; padding: 20px;">
+                            <div class="form-group">
+                                <h3 style="text-align: center; margin-top: 55px;">Member Info</h3>
+                                <label for="firstName">First Name</label>
+                                <input type="text" value="Boakai" class="form-control member-detail" id="firstName" placeholder="John" required aria-required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="middleName">Middle Name</label>
+                                <input type="text" value="Dorbor" required class="form-control member-detail" id="middleName" placeholder="Flomo">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" value="Kamara" required class="form-control member-detail" id="lastName" placeholder="Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" value="0776958533" required class="form-control member-detail" id="phoneNumber" placeholder="077734583">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select class="form-control member-detail" required id="gender">
+                                  <option value="none"  disabled hidden>Select gender</option>
+                                  <option value="male" selected>Male</option>
+                                  <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dateOfBirth">Date of Birth</label>
+                                <input type="date" value="january 23" required class="form-control member-detail" id="dateOfBirth" placeholder="Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" value="GSA" required class="form-control member-detail" id="location" placeholder="Airfield, Sinkor">
+                            </div>
+                            <div class="form-group">
+                                <label for="currentSchool">Current School</label>
+                                <input type="text" value="SVL School" required class="form-control member-detail" id="currentSchool" placeholder="SVL High School">
+                            </div>
+                            <div class="form-group">
+                                <label for="currentClass">Current Class</label>
+                                <input type="text" value="E" required class="form-control member-detail" id="currentClass" placeholder="1st Grade">
+                            </div>
+                            <div class="form-group">
+                                <label for="countyOfOrigin">County of Origin</label>
+                                <select required class="form-control member-detail" id="countyOfOrigin">
+                                <option value="none"  disabled hidden>Select county</option>
+                                <option value="Bomi" selected>Bomi</option>
+                                <option value="">Bong</option>
+                                <option value="Bong">Gbarpolu</option>
+                                <option value="Grand Bassa">Grand Bassa</option>
+                                <option value="Grand Cape Mount">Grand Cape Mount</option>
+                                <option value="Grand Kru">Grand Kru</option>
+                                <option value="Lofa">Lofa</option>
+                                <option value="Margibi">Margibi</option>
+                                <option value="Maryland">Maryland</option>
+                                <option value="Nimba">Nimba</option>
+                                <option value="Rivercess">Rivercess</option>
+                                <option value="River Gee">River Gee</option>
+                                <option value="Sinoe">Sinoe</option>
+                      
+                              </select>
+                            </div>
+
+
+                            <!-- parents info  -->
+                            <h3 style="text-align: center; margin-top: 55px;">Parent Info</h3>
+                            <div class="form-group">
+                                <label for="firstName">Parent First Name</label>
+                                <input type="text" value="Mr. Joe" required class="form-control parent-detail" id="firstName" aria-describedby="emailHelp" placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="middleName"> Parent Middle Name</label>
+                                <input type="text" value="Mr. Joe" required class="form-control parent-detail" id="middleName" placeholder="Flomo">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Parent Last Name</label>
+                                <input type="text" value="Mr. Joe" required class="form-control parent-detail" id="lastName" placeholder="Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select class="form-control parent-detail" required id="gender">
+                                  <option value="none"  disabled hidden>Select gender</option>
+                                  <option value="male" selected>Male</option>
+                                  <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="relationship">Relationship</label>
+                                <select class="form-control parent-detail" required id="relationship">
+                                  <option value="none"  disabled hidden>Select gender</option>
+                                  <option value="Father" selected>Father</option>
+                                  <option value="Mother">Mother</option>
+                                  <option value="Guardian">Guardian</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Parent Phone Number</label>
+                                <input type="tel" value="000" required class="form-control parent-detail" id="phoneNumber" placeholder="077734583">
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsAppNumber"> Parent WhatsApp Number</label>
+                                <input type="tel" value="887" required class="form-control parent-detail" id="whatsAppNumber" placeholder="077734583">
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsAppNumber">Emergency Contact</label>
+                                <input type="tel" value="8488" required class="form-control parent-detail" id="emergencyContact" placeholder="077714003">
+                            </div>
+                            <div class="form-check">
+                                <p>
+                                    <a href="https://siliconvalleylr.com/terms-and-conditions/" target="blank">Read Terms & Condition</a>
+                                </p>
+
+                            </div>
+
+                            <div class="alert alert-success mt-2" role="alert" id="notification">
+                                A simple success alert—check it out!
+                            </div>
+
+                            <div style="text-align: center;">
+                                <input type="submit" name="Add Member" class="btn btn-primary" id="add-member-btn">
+                                <!-- <button type="submit" class="btn btn-primary" id="add-member-btn">Add Member</button> -->
+                            </div>
+                        </form>
+
+                        <!-- notification  -->
+
+
+                        <!-- seperated forms  -->
+                        <!-- <h2 style="text-align: center;">Member Details</h2> -->
+                        <!-- Members details  -->
+                        <!-- <form id="member-details" style="background-color: white; padding: 20px;">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="email" class="form-control" id="fristName" aria-describedby="emailHelp" placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="middleName">Middle Name</label>
+                                <input type="password" class="form-control" id="middleName" placeholder="Flomo">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="password" class="form-control" id="lastName" placeholder="Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="077734583">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select class="form-control" id="gender">
+                                  <option value="none" selected disabled hidden>Select gender</option>
+                                  <option>Male</option>
+                                  <option>Female</option>
+                                  <option>Other</option>
+                        
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dateOfBirth">Date of Birth</label>
+                                <input type="date" class="form-control" id="lastName" placeholder="Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" id="location" placeholder="Airfield, Sinkor">
+                            </div>
+                            <div class="form-group">
+                                <label for="currentSchool">Current School</label>
+                                <input type="text" class="form-control" id="currentSchool" placeholder="SVL High School">
+                            </div>
+                            <div class="form-group">
+                                <label for="currentClass">Current Class</label>
+                                <input type="text" class="form-control" id="currentClass" placeholder="1st Grade">
+                            </div>
+                            <div class="form-group">
+                                <label for="countyOfOrigin">County of Origin</label>
+                                <select class="form-control" id="countyOfOrigin">
+                                <option value="none" selected disabled hidden>Select county</option>
+                                <option>Bomi</option>
+                                <option>Bong</option>
+                                <option>Gbarpolu</option>
+                                <option>Grand Bassa</option>
+                                <option>Grand Cape Mount</option>
+                                <option>Grand Kru</option>
+                                <option>Lofa</option>
+                                <option>Margibi</option>
+                                <option>Maryland</option>
+                                <option>Nimba</option>
+                                <option>Rivercess</option>
+                                <option>River Gee</option>
+                                <option>Sinoe</option>
+                      
+                              </select>
+                            </div>
+
+
+                            <div style="text-align: center;">
+                                <button type="submit" class="btn btn-primary ">Next</button>
+                            </div>
+                        </form> -->
+
+                        <!-- parents details  -->
+                        <!-- <h2 style="text-align: center;">Parent Details</h2> -->
+                        <!-- <form id="parent-details" style="background-color: white; padding: 20px;">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="email" class="form-control" id="fristName" aria-describedby="emailHelp" placeholder="John">
+                            </div>
+                            <div class="form-group">
+                                <label for="middleName">Middle Name</label>
+                                <input type="password" class="form-control" id="middleName" placeholder="Flomo">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="password" class="form-control" id="lastName" placeholder="Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" class="form-control" id="phoneNumber" placeholder="077734583">
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsAppNumber">WhatsApp Number</label>
+                                <input type="tel" class="form-control" id="whatsAppNumber" placeholder="077734583">
+                            </div>
+                            <div class="form-group">
+                                <label for="whatsAppNumber">Emergency Contact</label>
+                                <input type="tel" class="form-control" id="emergencyContact" placeholder="077714003">
+                            </div>
+                            <div class="form-check">
+                                <p>
+                                    <a href="https://siliconvalleylr.com/terms-and-conditions/" target="blank">Read Terms & Condition</a>
+                                </p>
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                Accept Terms & Condition
+                              </label>
+                            </div>
+
+
+
+                            <div style="text-align: center;">
+                                <button type="submit" class="btn btn-primary ">Submit</button>
+                            </div>
+                        </form> -->
+                    </div>
+
+                </main>
+
+                <!-- Scripts -->
+                <%- include('./layouts/scripts') -%>
+                    <script>
+                        // form 
+                        let member_registration_form = document.getElementById("member-details");
+                        // console.log(member_registration_form);
+
+
+                        //notification bar
+                        let notification = document.getElementById("notification");
+                        notification.style.display = "none";
+                        console.log(notification);
+
+
+                        //submit btn
+                        let submit_btn = document.getElementById("add-member-btn");
+                        // console.log(submit_btn)
+
+
+                        // responsible to get member details and store it in an object
+                        function getMemberDetails() {
+
+                            let member_details = {}
+
+                            // get all the field that has the class MEMBER DETAILS 
+                            let member_form_fields = document.getElementsByClassName("member-detail");
+
+
+                            for (i = 0; i < member_form_fields.length; i++) {
+
+                                //get the id of each field
+                                let current_form_field_id = member_form_fields[i].id;
+
+                                //get the value of each field
+                                let current_form_value = member_form_fields[i].value;
+
+
+                                //add member details to memeber details object
+                                member_details[current_form_field_id] = current_form_value
+                            }
+
+                            return member_details;
+
+                        }
+
+
+                        // responsible to get parent details and store it in an object
+                        function getParentDetails() {
+
+                            let parent_details = {}
+
+                            // get all the field that has the class "parent-detial" 
+                            let parent_form_fields = document.getElementsByClassName("parent-detail");
+
+
+                            for (i = 0; i < parent_form_fields.length; i++) {
+
+                                //get the id of each field
+                                let current_form_field_id = parent_form_fields[i].id;
+
+                                //get the value of each field
+                                let current_form_value = parent_form_fields[i].value;
+
+
+                                //add parent details to parent details object
+                                parent_details[current_form_field_id] = current_form_value
+                            }
+
+                            return parent_details;
+
+                        }
+
+
+
+                        //responsible to search through user data for variable without values
+                        function validateUserInput(data_obj) {
+                            checker = false;
+
+                            // search through user data 
+                            for (let key in data_obj) {
+
+                                //check if a form field is empty
+                                // console.log(key);
+                                if (data_obj[key] === '') {
+
+                                    checker = true;
+                                }
+
+                            }
+
+                            if (checker === true) {
+                                //notify user if an empty field is found
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        }
+
+
+
+                        //responsible to submit data to the backend
+                        async function submitUserData(api_url, user_data) {
+                            return fetch(api_url, {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                    body: JSON.stringify(user_data)
+                                })
+                                .then(response => response.json())
+                                .then(data => data)
+
+                        }
+
+
+
+                        //add funtionality to submit button
+                        member_registration_form.addEventListener("submit", () => {
+
+                            // stop default form submission  
+                            event.preventDefault();
+
+
+                            //get users data
+                            let member_data = getMemberDetails();
+                            let parent_data = getParentDetails();
+                            console.log(member_data)
+
+
+                            //validate user data
+                            let member_validation_result = validateUserInput(member_data);
+                            let parent_validation_result = validateUserInput(parent_data)
+                            console.log(member_validation_result);
+                            console.log(parent_validation_result);
+
+
+
+                            //submit data to the backend
+                            if (member_validation_result === 0 || parent_validation_result === 0) {
+                                console.log("okay")
+
+
+                                // submit parent data 
+                                let trial = async() => {
+                                    try {
+                                        let parent_result = await submitUserData("http://localhost:5000/parents", parent_data);
+                                        let parent_id = parent_result["parent_id"]
+                                        console.log("in submit fnx", parent_id);
+
+                                        if (parent_id) {
+                                            console.log("available");
+                                            //add parent id to member data
+                                            member_data["ParentId"] = parent_id;
+                                            console.log(member_data);
+                                            let member_result = await submitUserData("http://localhost:5000/members", member_data);
+
+                                            if (member_result["status_code"] === 0) {
+                                                notification.innerHTML = member_result["status_message"];
+                                                notification.style.display = "block";
+
+                                                setTimeout(() => {
+                                                    window.location.href = "/members/get";
+                                                }, 2000)
+                                                notification.focus();
+                                                console.log("notify");
+                                            }
+
+                                            console.log(member_result);
+                                        }
+                                    } catch {
+
+                                    }
+                                }
+
+                                trial();
+
+
+                            }
+                        })
+
+                        // submit_btn.addEventListener("click", () => {
+
+                        //     // stop defauld form submission  
+                        //     event.preventDefault();
+
+                        //     //get users data
+                        //     let member_data = getMemberDetails();
+                        //     let parent_data = getParentDetails();
+
+                        //     console.log(member_data)
+
+                        //     //validate user data
+                        //     let validation_result = validateUserInput(member_data);
+
+
+                        //     //submit data to the backend
+                        //     if (validation_result === 0) {
+                        //         console.log("okay")
+                        //         submitUserData("http://localhost:5000/members", member_data)
+                        //     }
+                        // })
+                    </script>
+    </body>
+
+    </html>

@@ -1,0 +1,44 @@
+<%- include('./layouts/head-links') -%>
+    </head>
+
+    <body class="app sidebar-mini rtl">
+        <!-- Navbar-->
+        <%- include('./layouts/navbar') -%>
+            <!-- Sidebar menu-->
+            <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+            <!-- Sidebar menu end -->
+            <%- include('./layouts/sidebar') -%>
+                <!-- Main page content -->
+                <main class="app-content">
+                    <div class="app-title">
+                        <div>
+                            <h1><i class="fa fa-dashboard"></i> QR Code Generator</h1>
+                            <p>Generate QR Codes for your organizaiton, business, company etc.</p>
+                        </div>
+                        <ul class="app-breadcrumb breadcrumb">
+                            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                            <li class="breadcrumb-item"><a href="#">QR Code Generator</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Cards -->
+                    <div class="row">
+                        <div class="form-group">
+                            <label class="control-label">Upload an image file</label>
+                            <input id="img-to-convert" class="form-control" type="file">
+                            <br>
+                            <button class="btn btn-primary" id="generate-qr-btn" type="button"><i class="fa fa-fw fa-lg fa-check-circle"></i>Generate</button>
+                        </div>
+
+                        <img id="img-preview" src="" alt="">
+
+                        <img id="img-qrcode" src="" alt="">
+                    </div>
+                </main>
+
+                <!-- Scripts -->
+                <%- include('./layouts/scripts') -%>
+                    <script src="public/js/generate-qr.js"></script>
+    </body>
+
+    </html>

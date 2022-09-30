@@ -1,0 +1,21 @@
+<aside class="app-sidebar">
+    <div class="app-sidebar__user" style="border-bottom: 1px solid white; padding-top: 15px;">
+        <!-- <img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image"> -->
+        <div>
+            <p class="app-sidebar__user-name" style="font-weight: bolder;">John Doe</p>
+            <p class="app-sidebar__user-designation">Student</p>
+        </div>
+    </div>
+    <ul class="app-menu">
+        <li><a class="app-menu__item <% if(page === 'dashboard'){ %>active<% } %>" href="/"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+
+        <li><a class="app-menu__item <% if(page === 'qrcode'){ %>active<% } %>" href="/qrcode"><i class="app-menu__icon fa fa-solid fa-qrcode "></i><span class="app-menu__label">Generate QR Code</span></a></li>
+
+        <li><a class="app-menu__item <% if(page === 'courses' || page === 'course-outline' || page === 'course-content'){ %>active<% } %>" href="/courses"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">STEM Courses</span></a></li>
+
+        <li><a class="app-menu__item <% if(page === 'Attendance'){ %>active<% } %>" href="/courses"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Attendance</span></a></li>
+
+        <li><a class="app-menu__item <% if(page === 'Members' || page === 'add member'){ %>active<% } %>" href="/members/get"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Members</span></a></li>
+
+    </ul>
+</aside>

@@ -1,0 +1,67 @@
+<%- include('./layouts/head-links') -%>
+    </head>
+
+    <body class="app sidebar-mini rtl">
+        <!-- Navbar-->
+        <%- include('./layouts/navbar') -%>
+            <!-- Sidebar menu-->
+            <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+            <!-- Sidebar menu end -->
+            <%- include('./layouts/sidebar') -%>
+                <!-- Main page content -->
+                <main class="app-content">
+                    <div class="app-title">
+                        <div>
+                            <h1><i class="fa fa-solid fa-qrcode"></i> QR Code Generator</h1>
+                            <p>Generate QR Codes for your organizaiton, business, company etc.</p>
+                        </div>
+                        <ul class="app-breadcrumb breadcrumb">
+                            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                            <li class="breadcrumb-item"><a href="#">QR Code Generator</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Cards -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="tile-title">Select QR code type</h3>
+                        </div>
+
+                        <div class="card text-center" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">ID Card</h5>
+                                <p class="card-text">Generate a QR code that will store the image of an ID Card.</p>
+                                <a href="/generate?type=id-card" class="btn btn-primary">Select</a>
+                            </div>
+                        </div>
+
+                        <div class="card text-center" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Website</h5>
+                                <p class="card-text">Generate a QR code with a link to a website.</p>
+                                <a href="#" class="btn btn-primary">Select</a>
+                            </div>
+                        </div>
+                        <!-- <div class="card text-center" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Website</h5>
+                                <p class="card-text">Generate a QR code with a link to a website.</p>
+                                <a href="#" class="btn btn-primary">Select</a>
+                            </div>
+                        </div>
+                        <div class="card text-center" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Website</h5>
+                                <p class="card-text">Generate a QR code with a link to a website.</p>
+                                <a href="#" class="btn btn-primary">Select</a>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </main>
+
+                <!-- Scripts -->
+                <%- include('./layouts/scripts') -%>
+    </body>
+
+    </html>

@@ -1,0 +1,87 @@
+/* sidebar styling  */
+.app-sidebar{
+  background-color: #17a2b8;
+}
+
+.app-menu__item{
+  text-decoration: none;
+}
+
+.app-menu__item:hover{
+  font-weight: bold;
+  /* color: #FFD00A; */
+  border-left: 3px solid #FFD00A;
+  background-color: #0C0761;
+}
+
+/* sidebar styling ends  */
+
+
+
+/* header styling starts  */
+.app-header{
+  background-color:#0C0761;
+}
+
+.app-sidebar__toggle{
+  background-color: #0C0761;
+}
+
+.app-sidebar__toggle:hover{
+  background-color: #0C0761;
+}
+
+.app-sidebar__toggle:active{
+  background-color: #0C0761;
+}
+/* header styling ends  */
+
+
+
+/* page title section for each menu item styling starts  */
+.app-title{
+  color: #0C0761;
+}
+
+.app-title h1{
+  color: rgb(158, 5, 5);
+}
+/* page title section for each menu item styling ends  */
+
+
+
+/* stem page styling starts  */
+#page-instruction{
+  color: #0C0761;
+  text-transform: uppercase;
+}
+
+.course-cards h5{
+  color: #0C0761 !important;
+  border-bottom: 1px solid rgb(158, 5, 5) ;
+}
+
+.course-cards p{
+  color: #0C0761 !important;
+}
+
+.course-cards .btn{
+  color: #FFD00A;
+  background-color: #0C0761 !important;
+  font-weight: bolder;
+}
+/* stem page styling starts  */
+.outline-items-links{
+  text-decoration: none;
+}
+
+.outline-items-links:hover{
+  text-decoration: none;
+}
+
+
+
+/* computer basic styling  */
+#page-wrapper{
+  background-color: #E5E5E5 !important;
+}

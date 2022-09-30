@@ -1,0 +1,278 @@
+<%- include('./layouts/head-links') -%>
+    </head>
+
+    <body class="app sidebar-mini rtl">
+        <!-- Navbar-->
+        <%- include('./layouts/navbar') -%>
+            <!-- Sidebar menu-->
+            <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+            <!-- Sidebar menu end -->
+            <%- include('./layouts/sidebar') -%>
+                <!-- Main page content -->
+                <main class="app-content">
+                    <div class="app-title">
+                        <div>
+                            <h1><i class="fa fa-solid fa-qrcode"></i> Members</h1>
+                            <p class="text-center">Get all info about Members</p>
+
+                        </div>
+                        <ul class="app-breadcrumb breadcrumb">
+                            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                            <li class="breadcrumb-item"><a href="#">New Member</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Members table -->
+
+                    <table class="table table-bordered bg-light">
+                        <thead>
+                            <tr>
+                                <!-- <th scope="col">#</th> -->
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Membership</th>
+                                <!-- <th scope="col">See More</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if (my_data) { %>
+                                <% my_data["members"].forEach(function(member){ %>
+                                    <tr>
+                                        <!-- <th scope="row">1</th> -->
+                                        <td>
+                                            <%= my_data["members"][0].firstName %>
+                                        </td>
+                                        <td>
+                                            <%= my_data["members"][0].lastName %>
+                                        </td>
+                                        <td>
+                                            <%= my_data["members"][0].gender %>
+                                        </td>
+                                        <td>
+                                            <%= my_data["members"][0].currentClass %>
+                                        </td>
+                                        <td>
+                                            <a href="" id="">See More</a>
+                                        </td>
+                                    </tr>
+                                    <% }); %>
+                                        <% } %>
+
+
+
+                        </tbody>
+
+                    </table>
+
+                    <div class="text-center mt-5">
+                        <a href="/members/create">
+                            <button type="button" class="btn btn-primary btn-lg">ADD MEMBER</button>
+                        </a>
+                        <!-- <button type="button" class="btn btn-secondary btn-lg">Large button</button> -->
+                    </div>
+
+
+                </main>
+
+                <!-- Scripts -->
+                <%- include('./layouts/scripts') -%>
+                    <script>
+                        // form 
+                        let member_registration_form = document.getElementById("member-details");
+                        // console.log(member_registration_form);
+
+
+                        //submit btn
+                        let submit_btn = document.getElementById("add-member-btn");
+                        // console.log(submit_btn)
+
+
+                        // responsible to get member details and store it in an object
+                        function getMemberDetails() {
+
+                            let member_details = {}
+
+                            // get all the field that has the class MEMBER DETAILS 
+                            let member_form_fields = document.getElementsByClassName("member-detail");
+
+
+                            for (i = 0; i < member_form_fields.length; i++) {
+
+                                //get the id of each field
+                                let current_form_field_id = member_form_fields[i].id;
+
+                                //get the value of each field
+                                let current_form_value = member_form_fields[i].value;
+
+
+                                //add member details to memeber details object
+                                member_details[current_form_field_id] = current_form_value
+                            }
+
+                            return member_details;
+
+                        }
+
+
+                        // responsible to get parent details and store it in an object
+                        function getParentDetails() {
+
+                            let parent_details = {}
+
+                            // get all the field that has the class "parent-detial" 
+                            let parent_form_fields = document.getElementsByClassName("parent-detail");
+
+
+                            for (i = 0; i < parent_form_fields.length; i++) {
+
+                                //get the id of each field
+                                let current_form_field_id = parent_form_fields[i].id;
+
+                                //get the value of each field
+                                let current_form_value = parent_form_fields[i].value;
+
+
+                                //add parent details to parent details object
+                                parent_details[current_form_field_id] = current_form_value
+                            }
+
+                            return parent_details;
+
+                        }
+
+
+
+                        //responsible to search through user data for variable without values
+                        function validateUserInput(data_obj) {
+                            checker = false;
+
+                            // search through user data 
+                            for (let key in data_obj) {
+
+                                //check if a form field is empty
+                                // console.log(key);
+                                if (data_obj[key] === '') {
+
+                                    checker = true;
+                                }
+
+                            }
+
+                            if (checker === true) {
+                                //notify user if an empty field is found
+                                return 1;
+                            } else {
+                                return 0;
+                            }
+                        }
+
+
+
+                        //responsible to submit data to the backend
+                        let message_from_server;
+
+                        async function submitUserData(api_url, user_data) {
+                            fetch(api_url, {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                    body: JSON.stringify(user_data)
+                                })
+                                .then(response => response.json())
+                                .then((data) => {
+                                    message_from_server = data;
+                                    console.log("in submit user fnx", message_from_server);
+                                    // console.log(message_from_server["status_message"]);
+                                    // alert(message_from_server["status_message"]);
+                                    return message_from_server;
+                                })
+                        }
+
+
+
+                        //add funtionality to submit button
+                        member_registration_form.addEventListener("submit", () => {
+
+                            // stop defauld form submission  
+                            event.preventDefault();
+
+                            //get users data
+                            let member_data = getMemberDetails();
+                            let parent_data = getParentDetails();
+                            console.log(member_data)
+
+                            //validate user data
+                            let member_validation_result = validateUserInput(member_data);
+                            let parent_validation_result = validateUserInput(parent_data)
+                            console.log(member_validation_result);
+                            console.log(parent_validation_result);
+
+
+
+                            //submit data to the backend
+                            // member_validation_result === 0 ||
+                            if (parent_validation_result === 0) {
+                                console.log("okay")
+                                    // submitUserData("http://localhost:5000/members", member_data)
+
+
+
+
+
+
+
+                                let trial = async() => {
+                                    try {
+                                        let parent_result = await submitUserData("http://localhost:5000/parents", parent_data);
+                                        console.log(message_from_server);
+                                    } catch {
+
+                                    }
+                                }
+
+                                trial();
+                                // let parent_id = await parent_result;
+
+
+                                //get parent id
+                                // for (i = 0; i < parent_result.length; i++) {
+                                //     console.log(i);
+                                // }
+
+                                // let parent_id = parent_result;
+                                // parent_id = Object.entries(parent_id);
+
+                                // console.log("inside submit fnx", parent_id);
+                                // console.log("inside submit fnx", typeof parent_id);
+                                // console.log("value", parent_id[0]);
+
+                            }
+                        })
+
+                        // submit_btn.addEventListener("click", () => {
+
+                        //     // stop defauld form submission  
+                        //     event.preventDefault();
+
+                        //     //get users data
+                        //     let member_data = getMemberDetails();
+                        //     let parent_data = getParentDetails();
+
+                        //     console.log(member_data)
+
+                        //     //validate user data
+                        //     let validation_result = validateUserInput(member_data);
+
+
+                        //     //submit data to the backend
+                        //     if (validation_result === 0) {
+                        //         console.log("okay")
+                        //         submitUserData("http://localhost:5000/members", member_data)
+                        //     }
+                        // })
+                    </script>
+    </body>
+
+    </html>

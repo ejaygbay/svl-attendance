@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: no
+
+00:00:17.730 --> 00:00:21.730
+Du vet kanskje allerede at det er en del viktige deler på innsiden av en stasjonær datamaskin,
+
+00:00:21.730 --> 00:00:26.880
+men hva er det egentilg de gjør? I denne videoen skal vi ta en kikk på innsiden for å vise
+
+00:00:26.880 --> 00:00:32.070
+deg de ulike komponentene som får en datamaskin til å virke.
+
+00:00:32.070 --> 00:00:37.140
+Alle datamaskiner har et stort kretskort, kalt hovedkort. Kretskortet inneholder noen av de mest
+
+00:00:37.140 --> 00:00:42.690
+sentale delene av en datamaskin, slik som CPU-en, også kalt den sentrale prosessoren
+
+00:00:42.690 --> 00:00:48.400
+eller bare prosessoren. CPU-en kalles av og til hjernen i datamaskinen fordi den prosesserer
+
+00:00:48.400 --> 00:00:53.829
+informasjon og utfører kommandoer. Siden den har en tendens til å bli varm er den dekket av en metalldel,
+
+00:00:53.829 --> 00:00:59.840
+kalt en kjøleribbe, som leder varmen bort fra prosessoren.
+
+00:00:59.840 --> 00:01:05.670
+På hovedkortet finner du også datamaskins RAM, eller internminne. Dette er
+
+00:01:05.670 --> 00:01:10.530
+korttidsminnet som datamaskinen bruker når den utfører sine operasjoner. Du kan likevel
+
+00:01:10.530 --> 00:01:15.280
+ikke lagre filer her fordi internminnet blir slettet når du slår av maskinen.
+
+00:01:15.280 --> 00:01:19.850
+For å lagre permantent bruker datamaskinen en harddisk som tar vare alle data
+
+00:01:19.850 --> 00:01:25.119
+selv om maskinen er slått av. Majoriteten av harddisker har et magnetisk platelager for å lagre
+
+00:01:25.119 --> 00:01:30.890
+data, men på mange nyere datamaskiner er det en solid-state disk som både er raskere og tåler mer,
+
+00:01:30.890 --> 00:01:36.229
+men de er også dyrere. Hvis du ønsker å oppgradere din datamaskin kan du
+
+00:01:36.229 --> 00:01:41.349
+sette inn ekspansjonskort i hovedkortets ekspansjons-spor. Du kan sette inn et skjermkort
+
+00:01:41.349 --> 00:01:45.340
+for å få bedre grafikk-ytelse, eller du kan sette inn et trådløst nettverkskort for å koble deg til ditt
+
+00:01:45.340 --> 00:01:50.520
+trådløse hjemme-nettverk. Selvsagt trenger komponentene i datamaskinen
+
+00:01:50.520 --> 00:01:55.610
+strøm for å fungere. Strømforsyningen er tilpasset for å ta spenningen fra veggkontakten
+
+00:01:55.610 --> 00:02:00.959
+og sende den til alle de ulike delene som trenger strøm.
+
+00:02:00.959 --> 00:02:06.039
+En stasjonær datamaskin er en nokså kompleks maskin, men nå, når du har sett hva som skjer på innsiden,
+
+00:02:06.039 --> 00:02:08.060
+burde det være litt mindre mystisk.
+
